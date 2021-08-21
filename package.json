@@ -246,10 +246,13 @@
     "yarn-deduplicate": "^3.1.0"
   },
   "dependencies": {
+    "@blueprintjs/core": "4.0.0-alpha.0",
+    "classnames": "^2.3.1",
     "electron-debug": "^3.2.0",
     "electron-log": "^4.3.5",
     "electron-updater": "^4.3.8",
     "history": "4.x.x",
+    "normalize.css": "^8.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
