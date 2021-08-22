@@ -6,8 +6,14 @@ import Sidebar from './components/Sidebar/Sidebar';
 
 const Hello = () => {
   return (
-    <div>
-      <Sidebar />
+    <div className="app">
+      <div className="toolbar"></div>
+      <div className="main-container">
+        <div className="menu-entry"></div>
+        <Sidebar />
+        <div className="main-content" />
+        <div></div>
+      </div>
     </div>
   );
 };

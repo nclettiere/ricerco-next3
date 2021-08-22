@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 import classNames from 'classnames/bind';
 import style from './Sidebar.css';
+import { Button, H5 } from '@blueprintjs/core';
 
 const cx = classNames.bind(style);
 
@@ -40,20 +41,19 @@ function Sidebar() {
   }, [resize, stopResizing]);
 
   return (
-    <div className={cx('app-container')}>
-      <div
-        ref={sidebarRef}
-        className={cx('app-sidebar')}
-        style={{ width: sidebarWidth }}
-        onMouseDown={(e) => e.preventDefault()}
-      >
-        <div className={cx('app-sidebar-content')} />
-        <div
-          className={cx('app-sidebar-resizer')}
-          onMouseDown={startResizing}
-        />
+    <div
+      ref={sidebarRef}
+      className={cx('app-sidebar')}
+      style={{ width: sidebarWidth }}
+      onMouseDown={(e) => e.preventDefault()}
+    >
+      <div className={cx('app-sidebar-content')}>
+        <div className={cx('app-sidebar-titlebar')}>
+          <H5 style={{'margin': 0, 'color': '#6f6f6f', 'fontWeight': 400}}>Titlebar</H5>
+          <Button minimal icon='cog' />
+        </div>
       </div>
-      <div className={cx('app-frame')} />
+      <div className={cx('app-sidebar-resizer')} onMouseDown={startResizing} />
     </div>
   );
 }
