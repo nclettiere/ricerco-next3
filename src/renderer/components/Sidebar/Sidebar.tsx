@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 
 import classNames from 'classnames/bind';
-import style from './Sidebar.css';
 import { Button, H5 } from '@blueprintjs/core';
+import style from './Sidebar.css';
 
 const cx = classNames.bind(style);
 
@@ -11,7 +11,7 @@ function Sidebar() {
   const [isResizing, setIsResizing] = useState(false);
   const [sidebarWidth, setSidebarWidth] = useState(268);
 
-  const startResizing = React.useCallback((mouseDownEvent) => {
+  const startResizing = React.useCallback(() => {
     setIsResizing(true);
   }, []);
 
@@ -24,7 +24,7 @@ function Sidebar() {
       if (isResizing) {
         setSidebarWidth(
           mouseMoveEvent.clientX -
-            sidebarRef.current.getBoundingClientRect().left
+            sidebarRef.current?.getBoundingClientRect().left
         );
       }
     },
@@ -45,15 +45,24 @@ function Sidebar() {
       ref={sidebarRef}
       className={cx('app-sidebar')}
       style={{ width: sidebarWidth }}
+      role="button"
+      tabIndex={0}
       onMouseDown={(e) => e.preventDefault()}
     >
       <div className={cx('app-sidebar-content')}>
         <div className={cx('app-sidebar-titlebar')}>
-          <H5 style={{'margin': 0, 'color': '#6f6f6f', 'fontWeight': 400}}>Titlebar</H5>
-          <Button minimal icon='cog' />
+          <H5 style={{ margin: 0, color: '#6f6f6f', fontWeight: 400 }}>
+            Titlebar
+          </H5>
+          <Button minimal icon="cog" />
         </div>
       </div>
-      <div className={cx('app-sidebar-resizer')} onMouseDown={startResizing} />
+      <div
+        className={cx('app-sidebar-resizer')}
+        onMouseDown={startResizing}
+        role="button"
+        tabIndex={0}
+        aria-label="" />
     </div>
   );
 }
