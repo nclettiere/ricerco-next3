@@ -1209,6 +1209,18 @@
     dir-compare "^2.4.0"
     fs-extra "^9.0.1"
 
+"@emotion/is-prop-valid@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-1.1.0.tgz#29ef6be1e946fb4739f9707def860f316f668cde"
+  integrity sha512-9RkilvXAufQHsSsjQ3PIzSns+pxuX4EW8EbGeSPjZMHuMx6z/MOzb9LpqNieQX4F3mre3NWS2+X3JNRHTQztUQ==
+  dependencies:
+    "@emotion/memoize" "^0.7.4"
+
+"@emotion/memoize@^0.7.4":
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.5.tgz#2c40f81449a4e554e9fc6396910ed4843ec2be50"
+  integrity sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==
+
 "@eslint/eslintrc@^0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.4.1.tgz#442763b88cecbe3ee0ec7ca6d6dd6168550cbf14"
@@ -1434,6 +1446,14 @@
   integrity sha512-GeeM827DlzFFidn1eKkMBiqXFD2oLsnZbaiGhByPl0vcapsRzUL+t9hDoov1swc9rB2jw64R+ihtzC8qOE9wXw==
   dependencies:
     extend "3.0.2"
+
+"@naisutech/react-tree@^2.0.11":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@naisutech/react-tree/-/react-tree-2.0.11.tgz#0c723f6eaadeb0ad550ecdd6612900b0684f924b"
+  integrity sha512-ATFrZxBUcRQrbyQNMl/m2lvkzBX8MRUIJRBWKpFsjzJr3pJXadqK+bXopr7zXBlqJDjdvbYaCeoWuJltcYOBYg==
+  dependencies:
+    "@emotion/is-prop-valid" "^1.1.0"
+    nanoid "^3.1.23"
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"

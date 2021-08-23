@@ -3,10 +3,11 @@ import React, { useState, useRef } from 'react';
 import classNames from 'classnames/bind';
 import { Button, H5 } from '@blueprintjs/core';
 import style from './Sidebar.css';
+import ISidebarProps from './Default/ISidebarProps';
 
 const cx = classNames.bind(style);
 
-function Sidebar() {
+const Sidebar: React.FC<ISidebarProps> = (props) => {
   const sidebarRef = useRef(null);
   const [isResizing, setIsResizing] = useState(false);
   const [sidebarWidth, setSidebarWidth] = useState(268);
@@ -56,15 +57,17 @@ function Sidebar() {
           </H5>
           <Button minimal icon="cog" />
         </div>
+        {props.content}
       </div>
       <div
         className={cx('app-sidebar-resizer')}
         onMouseDown={startResizing}
         role="button"
         tabIndex={0}
-        aria-label="" />
+        aria-label=""
+      />
     </div>
   );
-}
+};
 
 export default Sidebar;
